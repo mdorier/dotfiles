@@ -1496,8 +1496,8 @@
   # Type `p10k help segment` for documentation and a more sophisticated example.
   function prompt_spack() {
     local v=${SPACK_ENV:t}
-    #p10k segment -f 208 -i '♦' -t "${v}"
-    p10k segment -f 208 -i '❖' -t "${v}"
+    [[ -n $v ]] || return
+    p10k segment -f 208 -i '▢' -t "${v}"
   }
 
   # User-defined prompt segments may optionally provide an instant_prompt_* function. Its job
