@@ -26,7 +26,7 @@ let g:rainbow_active = 1
 
 " My settings
 set encoding=utf-8
-set mouse-=a
+set mouse=a
 syntax on
 autocmd Filetype c setlocal ts=4 sts=4 sw=4 expandtab
 autocmd Filetype rust setlocal ts=4 sts=4 sw=4 expandtab
