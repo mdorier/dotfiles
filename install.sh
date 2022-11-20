@@ -6,6 +6,12 @@ if test -f "~/.zshrc"; then
 fi
 cp .zshrc ~/.zshrc
 
+# Copy vimrc
+if test -f "~/.vimrc"; then
+    cp ~/.vimrc ~/.vimrc.backup
+fi
+cp .vimrc ~/.vimrc
+
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
@@ -25,11 +31,5 @@ if test -f "~/.p10k.zsh"; then
     cp ~/.p10k.zsh ~/.p10k.zsh.backup
 fi
 cp .p10k.zsh ~/.p10k.zsh
-
-# Copy vimrc
-if test -f "~/.vimrc"; then
-    cp ~/.vimrc ~/.vimrc.backup
-fi
-cp .vimrc ~/.vimrc
 
 echo "Installation done, please restart your terminal"
