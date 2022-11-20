@@ -1,5 +1,13 @@
 #!/usr/bin/env zsh
 
+# NOTE: for vim plugins to work the following need to be installed
+# - NodeJS
+#   on Ubuntu: sudo apt install nodejs
+#   on MacOS: brew install node
+# - CCLS
+#   on Ubuntu: sudo apt install ccls
+#   on MacOS: brew install ccls
+
 # Copy .zshrc
 if test -f "~/.zshrc"; then
     cp ~/.zshrc ~/.zshrc.backup
@@ -11,6 +19,13 @@ if test -f "~/.vimrc"; then
     cp ~/.vimrc ~/.vimrc.backup
 fi
 cp .vimrc ~/.vimrc
+
+# Copy COC settings
+mkdir -p ~/.vim
+if test -f "~/.vim/coc-settings.json"; then
+    cp ~/.vim/coc-settings.json ~/.vim/coc-settings.json.backup
+fi
+cp coc-settings.json ~/.vim/
 
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
