@@ -12,7 +12,6 @@
 if test -f "~/.zshrc"; then
     cp ~/.zshrc ~/.zshrc.backup
 fi
-cp .zshrc ~/.zshrc
 
 # Copy vimrc
 if test -f "~/.vimrc"; then
@@ -29,6 +28,8 @@ cp coc-settings.json ~/.vim/
 
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+cp .zshrc ~/.zshrc
 
 # Install autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions \
